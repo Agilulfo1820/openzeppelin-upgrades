@@ -43,6 +43,9 @@ export async function getNetworkId(provider: EthereumProvider): Promise<string> 
 }
 
 export async function getChainId(provider: EthereumProvider): Promise<number> {
+  console.log("getChainId", provider);
+
+  return 100010;
   const id = await provider.send('eth_chainId', []);
   return parseInt(id.replace(/^0x/, ''), 16);
 }
